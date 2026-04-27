@@ -8,6 +8,7 @@ const { logger } = require('./utils/logger');
 const PORT = process.env.PORT || 3000;
 
 const init = async () => {
+  console.log('test')
   await connectDatabase();
   getRedisClient(); 
 

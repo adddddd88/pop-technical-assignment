@@ -2,9 +2,6 @@ const mongoose = require('mongoose');
 
 const { Schema } = mongoose;
 
-// ---------------------------------------------------------------------------
-// Sub-schemas for each loyalty mode
-// ---------------------------------------------------------------------------
 
 const LinearConfigSchema = new Schema(
   {

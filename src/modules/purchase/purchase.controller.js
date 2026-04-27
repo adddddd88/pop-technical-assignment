@@ -20,14 +20,14 @@ class PurchaseController {
         );
       }
 
-      const result =  this.purchaseService.processPurchase({
+      const result = await this.purchaseService.processPurchase({
         enterpriseId,
         clientId,
         amount,
         category,
       });
 
-      return sendSuccess(res, 'result', 201);
+      return sendSuccess(res, result, 201);
     } catch (err) {
       if (err.code === 'ENTERPRISE_NOT_FOUND') {
         return sendError(res, err.code, err.message, 404);

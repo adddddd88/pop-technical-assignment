@@ -2,9 +2,6 @@ const mongoose = require('mongoose');
 
 const { Schema } = mongoose;
 
-// ---------------------------------------------------------------------------
-// Client — the person (identity)
-// ---------------------------------------------------------------------------
 const ClientSchema = new Schema(
   {
     name: {
@@ -28,9 +25,6 @@ const ClientSchema = new Schema(
   }
 );
 
-// ---------------------------------------------------------------------------
-// ClientEnterprise — loyalty account (link between client and enterprise)
-// ---------------------------------------------------------------------------
 const ClientEnterpriseSchema = new Schema(
   {
     clientId: {
@@ -55,7 +49,6 @@ const ClientEnterpriseSchema = new Schema(
   }
 );
 
-// One loyalty account per (client, enterprise) pair
 ClientEnterpriseSchema.index({ clientId: 1, enterpriseId: 1 }, { unique: true });
 
 const ClientModel = mongoose.model('Client', ClientSchema);

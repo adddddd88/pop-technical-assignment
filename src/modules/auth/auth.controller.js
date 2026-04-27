@@ -33,7 +33,7 @@ class AuthController {
     }
   }
 
-  async logout(req, res, next) {
+  async logout(req, res, next) {  
     try {
       await this.authService.logout(req.auth.enterpriseId);
 

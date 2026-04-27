@@ -1,10 +1,5 @@
 const { z } = require('zod');
 
-/**
- * Validates the raw LLM output.
- * All fields are optional at this stage — missing/invalid fields are
- * caught here and handled gracefully in the service (confidence = 'low').
- */
 const LLMOutputSchema = z.object({
   amount: z
     .number()
